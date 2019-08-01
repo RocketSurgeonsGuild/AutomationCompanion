@@ -4,7 +4,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql" />
-    <PackageReference Include="roundhouse.postgresql" />
     <Compile Include="../DockerCompose/Helpers.cs" />
     <PackageReference Include="Rocket.Surgery.Extensions.Configuration" />
     <PackageReference Include="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" />

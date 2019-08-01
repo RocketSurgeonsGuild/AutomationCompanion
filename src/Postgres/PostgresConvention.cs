@@ -52,7 +52,7 @@ namespace Rocket.Surgery.Automation.Postgres
             {
                 Host = host,
                 Port = port,
-                UserName = username,
+                Username = username,
                 Password = password,
                 Database = database ?? "development",
             };
