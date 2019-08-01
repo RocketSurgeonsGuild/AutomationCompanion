@@ -21,10 +21,11 @@ namespace Rocket.Surgery.Automation.Postgres
         {
             if (string.IsNullOrWhiteSpace(directory))
             {
-                directory = Helpers.FindDirectoryContainingDirectory(Directory.GetCurrentDirectory(), ".git");
+                directory = Path.Combine(
+                    Helpers.FindDirectoryContainingDirectory(Directory.GetCurrentDirectory(), ".git"), "database");
             }
 
-            _directory = directory;
+            _directory = Path.GetFullPath(directory);
         }
 
         public IEnumerable<string> Logs => _logs;
@@ -43,7 +44,7 @@ namespace Rocket.Surgery.Automation.Postgres
             var items = new Dictionary<string, string>()
             {
                 { "-c", connectionString },
-                { "-f", Path.Combine(_directory, "database") },
+                { "-f", _directory },
                 { "-dt", "postgres" },
                 // { "--version", new GitVersionAutomation().LegacySemVerPadded },
             };
