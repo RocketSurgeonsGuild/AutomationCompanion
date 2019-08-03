@@ -31,20 +31,20 @@ This library lets you integrate automations so that when your application starts
 TBD
 
 <!-- generated references -->
-[github-release]: https://github.com/RocketSurgeonsGuild/Testing/releases/latest
-[github-release-badge]: https://img.shields.io/github/release/RocketSurgeonsGuild/Testing.svg?logo=github&style=flat "Latest Release"
-[github-license]: https://github.com/RocketSurgeonsGuild/Testing/blob/master/LICENSE
-[github-license-badge]: https://img.shields.io/github/license/RocketSurgeonsGuild/Testing.svg?style=flat "License"
-[codecov]: https://codecov.io/gh/RocketSurgeonsGuild/Testing
-[codecov-badge]: https://img.shields.io/codecov/c/github/RocketSurgeonsGuild/Testing.svg?color=E03997&label=codecov&logo=codecov&logoColor=E03997&style=flat "Code Coverage"
-[azurepipelines]: https://rocketsurgeonsguild.visualstudio.com/Libraries/_build/latest?definitionId=1&branchName=master
-[azurepipelines-badge]: https://img.shields.io/azure-devops/build/rocketsurgeonsguild/Libraries/1.svg?color=98C6FF&label=azure%20pipelines&logo=azuredevops&logoColor=98C6FF&style=flat "Azure Pipelines Status"
-[azurepipelines-history]: https://rocketsurgeonsguild.visualstudio.com/Libraries/_build?definitionId=1&branchName=master
-[azurepipelines-history-badge]: https://buildstats.info/azurepipelines/chart/rocketsurgeonsguild/Libraries/1?includeBuildsFromPullRequest=false "Azure Pipelines History"
-[appveyor]: https://ci.appveyor.com/project/RocketSurgeonsGuild/testing
-[appveyor-badge]: https://img.shields.io/appveyor/ci/RocketSurgeonsGuild/testing.svg?color=00b3e0&label=appveyor&logo=appveyor&logoColor=00b3e0&style=flat "AppVeyor Status"
-[appveyor-history]: https://ci.appveyor.com/project/RocketSurgeonsGuild/testing/history
-[appveyor-history-badge]: https://buildstats.info/appveyor/chart/RocketSurgeonsGuild/testing?includeBuildsFromPullRequest=false "AppVeyor History"
+[github-release]: https://github.com/RocketSurgeonsGuild/AutomationCompanion/releases/latest
+[github-release-badge]: https://img.shields.io/github/release/RocketSurgeonsGuild/AutomationCompanion.svg?logo=github&style=flat "Latest Release"
+[github-license]: https://github.com/RocketSurgeonsGuild/AutomationCompanion/blob/master/LICENSE
+[github-license-badge]: https://img.shields.io/github/license/RocketSurgeonsGuild/AutomationCompanion.svg?style=flat "License"
+[codecov]: https://codecov.io/gh/RocketSurgeonsGuild/AutomationCompanion
+[codecov-badge]: https://img.shields.io/codecov/c/github/RocketSurgeonsGuild/AutomationCompanion.svg?color=E03997&label=codecov&logo=codecov&logoColor=E03997&style=flat "Code Coverage"
+[azurepipelines]: https://rocketsurgeonsguild.visualstudio.com/Libraries/_build/latest?definitionId=36&branchName=master
+[azurepipelines-badge]: https://img.shields.io/azure-devops/build/rocketsurgeonsguild/Libraries/36.svg?color=98C6FF&label=azure%20pipelines&logo=azuredevops&logoColor=98C6FF&style=flat "Azure Pipelines Status"
+[azurepipelines-history]: https://rocketsurgeonsguild.visualstudio.com/Libraries/_build?definitionId=36&branchName=master
+[azurepipelines-history-badge]: https://buildstats.info/azurepipelines/chart/rocketsurgeonsguild/Libraries/36?includeBuildsFromPullRequest=false "Azure Pipelines History"
+[appveyor]: https://ci.appveyor.com/project/RocketSurgeonsGuild/automationcompanion
+[appveyor-badge]: https://img.shields.io/appveyor/ci/RocketSurgeonsGuild/automationcompanion.svg?color=00b3e0&label=appveyor&logo=appveyor&logoColor=00b3e0&style=flat "AppVeyor Status"
+[appveyor-history]: https://ci.appveyor.com/project/RocketSurgeonsGuild/automationcompanion/history
+[appveyor-history-badge]: https://buildstats.info/appveyor/chart/RocketSurgeonsGuild/automationcompanion?includeBuildsFromPullRequest=false "AppVeyor History"
 [nuget-gb3fjp0hc+ea]: https://www.nuget.org/packages/Rocket.Surgery.Automation.Azurite/
 [nuget-version-gb3fjp0hc+ea-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Automation.Azurite.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
 [nuget-downloads-gb3fjp0hc+ea-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Automation.Azurite.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
@@ -68,14 +68,14 @@ TBD
 <!-- nuke-data
 github:
   owner: RocketSurgeonsGuild
-  repository: Testing
+  repository: AutomationCompanion
 azurepipelines:
   account: rocketsurgeonsguild
   teamproject: Libraries
-  builddefinition: 1
+  builddefinition: 36
 appveyor:
   account: RocketSurgeonsGuild
-  build: testing
+  build: automationcompanion
 myget:
   account: rocket-surgeons-guild
 -->
