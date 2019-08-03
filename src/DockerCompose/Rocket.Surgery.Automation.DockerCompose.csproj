@@ -4,5 +4,6 @@
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="Rocket.Surgery.Extensions.Configuration.Abstractions" />
+      <PackageReference Include="Newtonsoft.Json" />
     </ItemGroup>
 </Project>

@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Newtonsoft.Json;
 
 // ReSharper disable once CheckNamespace
 namespace Rocket.Surgery.Automation
@@ -46,16 +48,14 @@ namespace Rocket.Surgery.Automation
         {
             return toolNames
                 .SelectMany(tool => Directory.EnumerateFiles(directory, tool, SearchOption.AllDirectories))
-                .Where(x => !string.IsNullOrWhiteSpace(x))
-                .FirstOrDefault();
+                .FirstOrDefault(x => !string.IsNullOrWhiteSpace(x));
         }
 
         public static string FindToolInPath(params string[] toolNames)
         {
             return toolNames
                 .Select(GetFullPath)
-                .Where(x => !string.IsNullOrWhiteSpace(x))
-                .FirstOrDefault();
+                .FirstOrDefault(x => !string.IsNullOrWhiteSpace(x));
         }
 
         public static string FindTool(string directory, params string[] toolNames)
@@ -85,6 +85,30 @@ namespace Rocket.Surgery.Automation
                 return true;
             }
             return false;
+        }
+
+        public static DotNetToolsConfig GetDotNetTools(string filePath)
+        {
+            if (!File.Exists(filePath))
+            {
+                return new DotNetToolsConfig()
+                {
+                    Tools = new Dictionary<string, ToolConfig>()
+                };
+            }
+            return JsonConvert.DeserializeObject<DotNetToolsConfig>(File.ReadAllText(filePath));
+        }
+
+        public class DotNetToolsConfig
+        {
+            public string Version { get; set; }
+            public IDictionary<string, ToolConfig> Tools { get; set; }
+        }
+
+        public class ToolConfig
+        {
+            public string Version { get; set; }
+            public IEnumerable<string> Commands { get; set; }
         }
     }
 }

@@ -39,7 +39,12 @@ namespace Rocket.Surgery.Automation.Postgres
 
         private string Roundhouse(string connectionString)
         {
-            //var roundhouse = Helpers.FindTool(Path.Combine(_directory, "tools"), "rh.exe", "rh.bat", "rh");
+            var rootDirectory = Helpers.FindDirectoryContainingDirectory(Directory.GetCurrentDirectory(), ".git");
+            var dotnetTools = Path.Combine(rootDirectory, @".config\dotnet-tools.json");
+            var cmd = Helpers.GetDotNetTools(dotnetTools).Tools.TryGetValue("dotnet-roundhouse", out var config) ?
+                config.Commands.First() :
+                Helpers.FindTool(Path.Combine(_directory, "tools"), "rh.exe", "rh.bat", "rh") ??
+                Helpers.FindToolInPath("rh.exe", "rh.bat", "rh");
 
             var items = new Dictionary<string, string>()
             {
@@ -48,7 +53,7 @@ namespace Rocket.Surgery.Automation.Postgres
                 { "-dt", "postgres" },
                 // { "--version", new GitVersionAutomation().LegacySemVerPadded },
             };
-            var arguments = "rh " + string.Join(" ", items.Select(x => $"{x.Key} \"{x.Value}\""));
+            var arguments = cmd + string.Join(" ", items.Select(x => $"{x.Key} \"{x.Value}\""));
             arguments += " --silent";
 
             var process = Process.Start(new ProcessStartInfo("dotnet")
