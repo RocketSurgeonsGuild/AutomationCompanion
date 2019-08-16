@@ -22,6 +22,15 @@ namespace Rocket.Surgery.Automation.DockerCompose
         {
             var _directory = Helpers.FindDirectoryContainingDirectory(Directory.GetCurrentDirectory(), ".git");
             if (string.IsNullOrWhiteSpace(_directory)) return;
+
+            Process.Start(new ProcessStartInfo("docker")
+            {
+                Arguments = "network prune --force",
+                WorkingDirectory = _directory,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            }).WaitForExit();
+
             var process = Process.Start(new ProcessStartInfo("docker-compose")
             {
                 Arguments = $"-f {_composeFile} up -d",
