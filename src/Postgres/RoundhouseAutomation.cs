@@ -9,15 +9,17 @@ namespace Rocket.Surgery.Automation.Postgres
     public class RoundhouseAutomation
     {
         private readonly List<string> _logs = new List<string>();
+        private readonly List<string> _args = new List<string>();
 
-        public static RoundhouseAutomation For(string directory = null)
+        public static RoundhouseAutomation For(string? directory = null, string? environment = null)
         {
-            return new RoundhouseAutomation(directory);
+            return new RoundhouseAutomation(directory, environment);
         }
 
         private readonly string _directory;
+        private readonly string _environment;
 
-        private RoundhouseAutomation(string directory)
+        private RoundhouseAutomation(string? directory, string? environment)
         {
             if (string.IsNullOrWhiteSpace(directory))
             {
@@ -26,9 +28,16 @@ namespace Rocket.Surgery.Automation.Postgres
             }
 
             _directory = Path.GetFullPath(directory);
+            _environment = environment ?? "UnitTest";
         }
 
         public IEnumerable<string> Logs => _logs;
+
+        public RoundhouseAutomation AddArgument(string arg)
+        {
+            _args.Add(arg);
+            return this;
+        }
 
         public async Task Start(string connectionString)
         {
@@ -41,30 +50,34 @@ namespace Rocket.Surgery.Automation.Postgres
         {
             var rootDirectory = Helpers.FindDirectoryContainingDirectory(Directory.GetCurrentDirectory(), ".git");
             var dotnetTools = Path.Combine(rootDirectory, @".config\dotnet-tools.json");
-            var cmd = Helpers.GetDotNetTools(dotnetTools).Tools.TryGetValue("dotnet-roundhouse", out var config) ?
+            var localTool = Helpers.GetDotNetTools(dotnetTools).Tools.TryGetValue("dotnet-roundhouse", out var config);
+            var cmd = localTool ?
                 config.Commands.First() :
                 Helpers.FindTool(Path.Combine(_directory, "tools"), "rh.exe", "rh.bat", "rh") ??
                 Helpers.FindToolInPath("rh.exe", "rh.bat", "rh");
 
-            var items = new Dictionary<string, string>()
+            _args.AddRange(new[]
             {
-                { "-c", connectionString },
-                { "-f", _directory },
-                { "-dt", "postgres" },
-                // { "--version", new GitVersionAutomation().LegacySemVerPadded },
-            };
-            var arguments = cmd + string.Join(" ", items.Select(x => $"{x.Key} \"{x.Value}\""));
-            arguments += " --silent";
+                "-c", $"\"{connectionString}\"",  "-f", $"\"{_directory}\"", "-dt", "postgres", "--dc", "--env", _environment
+            });
 
-            var process = Process.Start(new ProcessStartInfo("dotnet")
+            var arguments = string.Join(" ", _args);
+            arguments += " --silent";
+            if (localTool)
+            {
+                arguments = cmd + " " + arguments;
+            }
+
+            var process = Process.Start(new ProcessStartInfo(localTool ? "dotnet" : cmd)
             {
                 Arguments = arguments,
-                WorkingDirectory = _directory,
+                WorkingDirectory = rootDirectory,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true
             });
 
             var content = process.StandardOutput.ReadToEnd();
+            var error = process.StandardError.ReadToEnd();
             process.WaitForExit();
             return content;
         }
