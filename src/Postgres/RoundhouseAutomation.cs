@@ -49,7 +49,7 @@ namespace Rocket.Surgery.Automation.Postgres
         private string Roundhouse(string connectionString)
         {
             var rootDirectory = Helpers.FindDirectoryContainingDirectory(Directory.GetCurrentDirectory(), ".git");
-            var dotnetTools = Path.Combine(rootDirectory, @".config\dotnet-tools.json");
+            var dotnetTools = Path.Combine(rootDirectory, @".config", "dotnet-tools.json");
             var localTool = Helpers.GetDotNetTools(dotnetTools).Tools.TryGetValue("dotnet-roundhouse", out var config);
             var cmd = localTool ?
                 config.Commands.First() :
