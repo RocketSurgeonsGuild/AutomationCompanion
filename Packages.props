@@ -8,17 +8,17 @@
     <GlobalPackageReference Include="Roslynator.Analyzers" Version="2.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="Microsoft.Extensions.Logging" Version="2.1.0" />
+    <PackageReference Update="Microsoft.Extensions.Logging" Version="3.0.0" />
     <PackageReference Update="Microsoft.Extensions.DiagnosticAdapter" Version="2.1.0" />
     <PackageReference Update="System.Diagnostics.DiagnosticSource" Version="4.5.1" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'!='netstandard2.0' and '$(TargetFramework)'!='netcoreapp2.1'">
-    <PackageReference Update="Microsoft.Extensions.Logging" Version="3.0.0-rc1.19456.10" />
+    <PackageReference Update="Microsoft.Extensions.Logging" Version="3.0.0" />
     <PackageReference Update="Microsoft.Extensions.DiagnosticAdapter" Version="3.0.0-rc1.19456.10" />
     <PackageReference Update="System.Diagnostics.DiagnosticSource" Version="4.6.0-rc1.19456.4" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="Microsoft.Extensions.Logging" Version="2.1.0" />
+    <PackageReference Update="Microsoft.Extensions.Logging" Version="3.0.0" />
     <PackageReference Update="Npgsql" Version="4.0.10" />
     <PackageReference Update="Rocket.Surgery.Linq.Extensions" Version="1.0.5" />
     <PackageReference Update="Rocket.Surgery.Reactive.Extensions" Version="1.0.5" />
