@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 // ReSharper disable once CheckNamespace
 namespace Rocket.Surgery.Automation
@@ -96,7 +96,7 @@ namespace Rocket.Surgery.Automation
                     Tools = new Dictionary<string, ToolConfig>()
                 };
             }
-            return JsonConvert.DeserializeObject<DotNetToolsConfig>(File.ReadAllText(filePath));
+            return JsonSerializer.Deserialize<DotNetToolsConfig>(File.ReadAllBytes(filePath));
         }
 
         public class DotNetToolsConfig

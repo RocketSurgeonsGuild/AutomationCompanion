@@ -7,6 +7,6 @@
     <Compile Include="../DockerCompose/Helpers.cs" />
     <PackageReference Include="Rocket.Surgery.Extensions.Configuration" />
     <PackageReference Include="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" />
-    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
 </Project>

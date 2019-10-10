@@ -11,6 +11,7 @@
     <PackageReference Update="Microsoft.Extensions.Logging" Version="2.1.0" />
     <PackageReference Update="Microsoft.Extensions.DiagnosticAdapter" Version="2.1.0" />
     <PackageReference Update="System.Diagnostics.DiagnosticSource" Version="4.5.1" />
+    <PackageReference Update="System.Text.Json" Version="4.6.0" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'!='netstandard2.0' and '$(TargetFramework)'!='netcoreapp2.1'">
     <PackageReference Update="Microsoft.Extensions.Logging" Version="3.0.0" />
@@ -25,7 +26,6 @@
     <PackageReference Update="Rocket.Surgery.Extensions.Configuration.Abstractions" Version="9.0.3" />
     <PackageReference Update="Rocket.Surgery.Extensions.Configuration" Version="9.0.3" />
     <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
-    <PackageReference Update="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Rocket.Surgery.Extensions.Testing.FakeItEasy" Version="2.1.2" />
