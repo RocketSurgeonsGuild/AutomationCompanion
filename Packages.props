@@ -25,7 +25,7 @@
     <PackageReference Update="Rocket.Surgery.Reactive.Extensions" Version="2.0.0" />
     <PackageReference Update="Rocket.Surgery.Extensions.Configuration.Abstractions" Version="9.0.4" />
     <PackageReference Update="Rocket.Surgery.Extensions.Configuration" Version="9.0.4" />
-    <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
+    <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Rocket.Surgery.Extensions.Testing.FakeItEasy" Version="2.2.1" />
