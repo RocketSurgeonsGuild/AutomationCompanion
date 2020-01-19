@@ -1,6 +1,6 @@
 # Rocket Surgeons - Automation Companion
 
-Every good Rocket Surgeon likes to be able to test and integrate their tools together easily.  
+Every good Rocket Surgeon likes to be able to test and integrate their tools together easily.
 
 This library lets you integrate automations so that when your application starts up in debug mode you can ensure that all the services that are required are brought up using `docker up`.
 
@@ -20,11 +20,11 @@ This library lets you integrate automations so that when your application starts
 <!-- history badges -->
 
 <!-- nuget packages -->
-| Package | NuGet | MyGet |
-| ------- | ----- | ----- |
-| Rocket.Surgery.Automation.Azurite | [![nuget-version-gb3fjp0hc+ea-badge]![nuget-downloads-gb3fjp0hc+ea-badge]][nuget-gb3fjp0hc+ea] | [![myget-version-gb3fjp0hc+ea-badge]![myget-downloads-gb3fjp0hc+ea-badge]][myget-gb3fjp0hc+ea] |
-| Rocket.Surgery.Automation.DockerCompose | [![nuget-version-07gg/vicexsa-badge]![nuget-downloads-07gg/vicexsa-badge]][nuget-07gg/vicexsa] | [![myget-version-07gg/vicexsa-badge]![myget-downloads-07gg/vicexsa-badge]][myget-07gg/vicexsa] |
-| Rocket.Surgery.Automation.Postgres | [![nuget-version-0c6zed99pgjw-badge]![nuget-downloads-0c6zed99pgjw-badge]][nuget-0c6zed99pgjw] | [![myget-version-0c6zed99pgjw-badge]![myget-downloads-0c6zed99pgjw-badge]][myget-0c6zed99pgjw] |
+| Package | NuGet |
+| ------- | ----- |
+| Rocket.Surgery.Automation.Azurite | [![nuget-version-gb3fjp0hc+ea-badge]![nuget-downloads-gb3fjp0hc+ea-badge]][nuget-gb3fjp0hc+ea] |
+| Rocket.Surgery.Automation.DockerCompose | [![nuget-version-07gg/vicexsa-badge]![nuget-downloads-07gg/vicexsa-badge]][nuget-07gg/vicexsa] |
+| Rocket.Surgery.Automation.Postgres | [![nuget-version-0c6zed99pgjw-badge]![nuget-downloads-0c6zed99pgjw-badge]][nuget-0c6zed99pgjw] |
 <!-- nuget packages -->
 
 # Whats next?
@@ -48,21 +48,12 @@ TBD
 [nuget-gb3fjp0hc+ea]: https://www.nuget.org/packages/Rocket.Surgery.Automation.Azurite/
 [nuget-version-gb3fjp0hc+ea-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Automation.Azurite.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
 [nuget-downloads-gb3fjp0hc+ea-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Automation.Azurite.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
-[myget-gb3fjp0hc+ea]: https://www.myget.org/feed/rocket-surgeons-guild/package/nuget/Rocket.Surgery.Automation.Azurite
-[myget-version-gb3fjp0hc+ea-badge]: https://img.shields.io/myget/rocket-surgeons-guild/vpre/Rocket.Surgery.Automation.Azurite.svg?label=myget&color=004880&logo=nuget&style=flat-square "MyGet Pre-Release Version"
-[myget-downloads-gb3fjp0hc+ea-badge]: https://img.shields.io/myget/rocket-surgeons-guild/dt/Rocket.Surgery.Automation.Azurite.svg?color=004880&logo=nuget&style=flat-square "MyGet Downloads"
 [nuget-07gg/vicexsa]: https://www.nuget.org/packages/Rocket.Surgery.Automation.DockerCompose/
 [nuget-version-07gg/vicexsa-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Automation.DockerCompose.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
 [nuget-downloads-07gg/vicexsa-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Automation.DockerCompose.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
-[myget-07gg/vicexsa]: https://www.myget.org/feed/rocket-surgeons-guild/package/nuget/Rocket.Surgery.Automation.DockerCompose
-[myget-version-07gg/vicexsa-badge]: https://img.shields.io/myget/rocket-surgeons-guild/vpre/Rocket.Surgery.Automation.DockerCompose.svg?label=myget&color=004880&logo=nuget&style=flat-square "MyGet Pre-Release Version"
-[myget-downloads-07gg/vicexsa-badge]: https://img.shields.io/myget/rocket-surgeons-guild/dt/Rocket.Surgery.Automation.DockerCompose.svg?color=004880&logo=nuget&style=flat-square "MyGet Downloads"
 [nuget-0c6zed99pgjw]: https://www.nuget.org/packages/Rocket.Surgery.Automation.Postgres/
 [nuget-version-0c6zed99pgjw-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Automation.Postgres.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
 [nuget-downloads-0c6zed99pgjw-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Automation.Postgres.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
-[myget-0c6zed99pgjw]: https://www.myget.org/feed/rocket-surgeons-guild/package/nuget/Rocket.Surgery.Automation.Postgres
-[myget-version-0c6zed99pgjw-badge]: https://img.shields.io/myget/rocket-surgeons-guild/vpre/Rocket.Surgery.Automation.Postgres.svg?label=myget&color=004880&logo=nuget&style=flat-square "MyGet Pre-Release Version"
-[myget-downloads-0c6zed99pgjw-badge]: https://img.shields.io/myget/rocket-surgeons-guild/dt/Rocket.Surgery.Automation.Postgres.svg?color=004880&logo=nuget&style=flat-square "MyGet Downloads"
 <!-- generated references -->
 
 <!-- nuke-data
@@ -76,6 +67,4 @@ azurepipelines:
 appveyor:
   account: RocketSurgeonsGuild
   build: automationcompanion
-myget:
-  account: rocket-surgeons-guild
 -->
